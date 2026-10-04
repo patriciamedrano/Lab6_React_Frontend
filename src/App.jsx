@@ -24,7 +24,7 @@ function App() {
     const token = localStorage.getItem('access_token')
 
     try {
-      const response = await fetch('http://127.0.0.1:3000/products', {
+      const response = await fetch('https://lab6-medrano-lavalust-api.onrender.com/products', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -53,7 +53,7 @@ function App() {
     setMessage('')
 
     try {
-      const response = await fetch('http://127.0.0.1:3000/login', {
+      const response = await fetch('https://lab6-medrano-lavalust-api.onrender.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ function App() {
 
       if (editingId) {
         response = await fetch(
-          `http://127.0.0.1:3000/products/${editingId}`,
+          `https://lab6-medrano-lavalust-api.onrender.com/products/${editingId}`,
           {
             method: 'PUT',
             headers: {
@@ -114,7 +114,7 @@ function App() {
         )
       } else {
         response = await fetch(
-          'http://127.0.0.1:3000/products',
+          'https://lab6-medrano-lavalust-api.onrender.com/products',
           {
             method: 'POST',
             headers: {
@@ -175,7 +175,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:3000/products/${id}`,
+        `https://lab6-medrano-lavalust-api.onrender.com/products/${id}`,
         {
           method: 'DELETE',
           headers: {
@@ -211,7 +211,7 @@ function App() {
     const refreshToken = localStorage.getItem('refresh_token')
 
     try {
-      await fetch('http://127.0.0.1:3000/logout', {
+      await fetch('https://lab6-medrano-lavalust-api.onrender.com/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
